@@ -1,0 +1,9 @@
+{
+    "itemGroup.inca.general": "Inca",
+
+    "item.inca.salt_bottle": "Bottle of Salt",
+    "item.inca.llama_spit_bottle": "Bottle of Llama Spit",
+    "item.inca.salt_bottle.lore":  "§Even after cooking it for hours,\nit still smells like the bloody llama,\nwhich spewed at you. Ugh.",
+
+    "key.inca.spit": "Llama spit"
+}

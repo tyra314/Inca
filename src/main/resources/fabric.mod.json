@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "inca",
+  "version": "${version}",
+
+  "name": "Inca",
+  "description": "Inca, let the llamas out!",
+  "authors": [
+    "tyra314"
+  ],
+  "contact": {
+    "homepage": "https://minecraft.curseforge.com/projects/inca",
+    "sources": "https://github.com/tyra314/inca",
+    "issues": "https://github.com/tyra314/inca/issues"
+  },
+
+  "license": "GPLv3",
+  "icon": "assets/inca/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "tyra314.inca.IncaMod"
+    ],
+    "client": [
+      "tyra314.inca.IncaModClient"
+    ]
+  },
+  "mixins": [
+    "inca.mixins.json"
+  ],
+
+  "requires": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+  }
+}

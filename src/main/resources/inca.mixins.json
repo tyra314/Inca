@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "tyra314.inca.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "PlayerMixin",
+    "LlamaMixin",
+    "LlamaSpitMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "inca:item/llama_spit_bottle"
+  }
+}

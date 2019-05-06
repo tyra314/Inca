@@ -29,8 +29,6 @@ dependencies {
 
 	modCompile "io.github.cottonmc:cotton:${project.cotton_version}"
 	modCompile "crochet:Crochet:${project.crochet_version}"
-
-	modCompile(files("external/ModMenu-1.5.2-82.jar"))
 }
 
 processResources {

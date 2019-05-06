@@ -60,11 +60,11 @@ public class SpitPacket implements IPacket
 
                         Entity vehicle = player.getVehicle();
 
-                        if (vehicle != null && vehicle instanceof LlamaEntity)
+                        if (vehicle instanceof LlamaEntity)
                         {
                             LlamaEntity llama = (LlamaEntity) vehicle;
 
-                            if (!llama.isTame())
+                            if (!llama.isTame() || !((ISpitter) llama).canSpit())
                             {
                                 return;
                             }
@@ -86,6 +86,7 @@ public class SpitPacket implements IPacket
                                     1.0F,
                                     1.0F + (world.random.nextFloat() - world.random.nextFloat()) * 0.2F);
                             world.spawnEntity(spit);
+                            ((ISpitter) llama).spit();
                         }
                     }
             );

@@ -19,7 +19,7 @@ public class PlayerMixin
 {
     /**
      * Adds an mixin, which catches when a llama spits at the player.
-     *
+     * <p>
      * Given he has an empty bottle to "catch" the spit in, he will get a bottle of llama spit
      */
     @Inject(at = @At("HEAD"), method = "damage", cancellable = true)
@@ -31,6 +31,7 @@ public class PlayerMixin
 
             if (projectile.getAttacker() instanceof LlamaEntity)
             {
+                //noinspection ConstantConditions
                 PlayerEntity player = (PlayerEntity) ((Object) this);
 
                 for (Hand hand : Hand.values())

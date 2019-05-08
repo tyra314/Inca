@@ -12,8 +12,11 @@ import tyra314.inca.IncaMod;
 public class ModItems
 {
     public static final BaseItem LLAMA_SPIT_BOTTLE = new LlamaSpitBottle();
+
+    @SuppressWarnings("WeakerAccess")
     public static final BaseItem SALT_BOTTLE = new SaltBottle();
 
+    @SuppressWarnings("WeakerAccess")
     public static final Tag<Item> SALT = TagRegistry.item(new Identifier(IncaMod.SHARED_NAMESPACE, "salt"));
 
     public static void init()
@@ -26,6 +29,6 @@ public class ModItems
 
     private static void register(BaseItem item)
     {
-        Registry.register(Registry.ITEM, new Identifier(IncaMod.MODID, item.getRegistryKey()), item);
+        Registry.register(Registry.ITEM, new Identifier(IncaMod.MOD_ID, item.getRegistryKey()), item);
     }
 }

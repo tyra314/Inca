@@ -13,13 +13,14 @@ import tyra314.inca.network.SpitPacket;
 public class IncaMod implements ModInitializer
 {
     public static final String SHARED_NAMESPACE = "c";
-    public static String MODID = "inca";
+    public static final String MOD_ID = "inca";
+    public static final String MOD_NAME = "Inca";
 
-    public static final ModLogger LOG = new ModLogger(IncaMod.MODID);
+    public static final ModLogger LOG = new ModLogger(IncaMod.MOD_ID, IncaMod.MOD_NAME);
 
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
-            new Identifier(MODID, "general"),
+            new Identifier(MOD_ID, "general"),
             () -> new ItemStack(ModItems.LLAMA_SPIT_BOTTLE));
 
     @Override

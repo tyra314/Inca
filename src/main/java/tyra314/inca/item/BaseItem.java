@@ -5,7 +5,7 @@ import tyra314.inca.IncaMod;
 
 public class BaseItem extends Item
 {
-    private String registry_key;
+    private final String registry_key;
 
     public BaseItem(String registry_key, Settings settings)
     {
@@ -15,6 +15,7 @@ public class BaseItem extends Item
     }
 
 
+    @SuppressWarnings("WeakerAccess")
     public String getRegistryKey()
     {
         return registry_key;

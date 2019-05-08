@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BoundingBox;
@@ -45,6 +44,7 @@ public class LlamaSpitMixin
     @Inject(at = @At("TAIL"), method = "tick")
     private void tick(CallbackInfo info)
     {
+        //noinspection ConstantConditions
         LlamaSpitEntity spit = (LlamaSpitEntity) ((Object) this);
 
         if (spit.world.doesAreaContainFireSource(spit.getBoundingBox()))

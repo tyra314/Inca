@@ -17,7 +17,7 @@ import tyra314.inca.IncaMod;
 
 public class SpitPacket implements IPacket
 {
-    public static final Identifier ID = new Identifier(IncaMod.MODID, "spit");
+    public static final Identifier ID = new Identifier(IncaMod.MOD_ID, "spit");
 
     public SpitPacket()
     {
@@ -75,8 +75,8 @@ public class SpitPacket implements IPacket
 
                             Vec3d rot = player.getRotationVector();
 
-                            float strenght = MathHelper.sqrt(rot.x * rot.x + rot.z * rot.z) * 0.2F;
-                            spit.setVelocity(rot.x, rot.y + (double) strenght, rot.z, 1.5F, 10.0F);
+                            float strength = MathHelper.sqrt(rot.x * rot.x + rot.z * rot.z) * 0.2F;
+                            spit.setVelocity(rot.x, rot.y + (double) strength, rot.z, 1.5F, 10.0F);
                             world.playSound(null,
                                     llama.x,
                                     llama.y,

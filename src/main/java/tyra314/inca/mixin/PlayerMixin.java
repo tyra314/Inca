@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import tyra314.inca.IncaMod;
 import tyra314.inca.item.ModItems;
 
 @Mixin(PlayerEntity.class)
@@ -45,8 +44,6 @@ public class PlayerMixin
                         player.swingHand(hand);
 
                         info.setReturnValue(false);
-
-                        IncaMod.LOG.info("This would be funny D: NOT");
                     }
                 }
             }

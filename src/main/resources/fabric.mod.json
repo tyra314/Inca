@@ -32,8 +32,8 @@
 
   "requires": {
     "fabricloader": ">=0.4.0",
-    "fabric": "*",
-    "cotton": ">=0.6.4",
+    "fabric": ">=0.3.0",
+    "cotton": ">=0.6.6",
     "crochet": ">=1.0.2"
 
   },

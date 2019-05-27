@@ -12,6 +12,7 @@ import org.lwjgl.glfw.GLFW;
 import tyra314.inca.IncaMod;
 import tyra314.inca.network.SpitPacket;
 
+@Environment(EnvType.CLIENT)
 public class KeyBinds
 {
     private static FabricKeyBinding spitKeyBinding;
@@ -44,6 +45,7 @@ public class KeyBinds
     /**
      * If this key binding is pressed, we check if the player rides a llama and if he does, we let it spit in the direction the player is looking
      */
+    @Environment(EnvType.CLIENT)
     private static void handleSpitKey()
     {
         PacketHandler.sendToServer(new SpitPacket());

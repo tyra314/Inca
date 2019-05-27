@@ -26,13 +26,11 @@ public class SpitPacket implements IPacket
     @Override
     public void read(PacketByteBuf packetByteBuf)
     {
-
     }
 
     @Override
     public void write(PacketByteBuf packetByteBuf)
     {
-
     }
 
     @Override
@@ -56,8 +54,6 @@ public class SpitPacket implements IPacket
             PlayerEntity player = ctx.getPlayer();
 
             ctx.getTaskQueue().execute(() -> {
-
-
                         Entity vehicle = player.getVehicle();
 
                         if (vehicle instanceof LlamaEntity)

@@ -8,6 +8,7 @@
     "LlamaSpitMixin"
   ],
   "client": [
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

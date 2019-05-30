@@ -1,0 +1,8 @@
+{
+  "parent": "block/carpet",
+  "textures": {
+    "particle": "inca:block/foo_carpet",
+    "wool": "inca:block/foo_carpet"
+  }
+}
+

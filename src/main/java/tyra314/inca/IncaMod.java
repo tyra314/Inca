@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import tyra314.inca.block.Blocks;
 import tyra314.inca.item.ModItems;
 import tyra314.inca.network.SpitPacket;
 
@@ -33,6 +34,7 @@ public class IncaMod implements ModInitializer
         LOG.info("Initializing Inca Mod...");
 
         ModItems.init();
+        Blocks.init();
 
         ServerSidePacketRegistry.INSTANCE.register(SpitPacket.ID, new SpitPacket.Handler());
     }

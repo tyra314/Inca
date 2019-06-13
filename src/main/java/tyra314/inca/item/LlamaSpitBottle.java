@@ -8,9 +8,9 @@ import net.minecraft.util.Rarity;
 
 public class LlamaSpitBottle extends BaseItem
 {
-    public LlamaSpitBottle()
+    LlamaSpitBottle()
     {
-        super("llama_spit_bottle", new Item.Settings().stackSize(1).rarity(Rarity.EPIC));
+        super("llama_spit_bottle", new Item.Settings().maxCount(1).rarity(Rarity.EPIC));
     }
 
     @Environment(EnvType.CLIENT)

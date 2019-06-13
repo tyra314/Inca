@@ -20,7 +20,7 @@ public class SaltBottle extends BaseItem
 
     @Environment(EnvType.CLIENT)
     @Override
-    public void buildTooltip(ItemStack stack, World world, List<Component> list, TooltipContext context)
+    public void appendTooltip(ItemStack stack, World world, List<Component> list, TooltipContext context)
     {
         list.add(new TranslatableComponent("item.inca.salt_bottle.lore"));
     }

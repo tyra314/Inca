@@ -38,7 +38,7 @@ public class PlayerMixin
                     ItemStack stack = player.getStackInHand(hand);
                     if (stack.getItem() == Items.GLASS_BOTTLE)
                     {
-                        stack.subtractAmount(1);
+                        stack.decrement(1);
                         player.inventory.insertStack(new ItemStack(ModItems.LLAMA_SPIT_BOTTLE));
 
                         player.swingHand(hand);

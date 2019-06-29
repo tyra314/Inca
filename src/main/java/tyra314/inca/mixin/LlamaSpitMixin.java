@@ -7,7 +7,7 @@ import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BoundingBox;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LlamaSpitEntity.class)
 public class LlamaSpitMixin
 {
-    private static void putOutFire(BoundingBox box, World world)
+    private static void putOutFire(Box box, World world)
     {
         int int_1 = MathHelper.floor(box.minX);
         int int_2 = MathHelper.ceil(box.maxX);

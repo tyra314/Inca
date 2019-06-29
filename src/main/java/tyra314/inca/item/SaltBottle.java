@@ -5,8 +5,8 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -20,8 +20,8 @@ public class SaltBottle extends BaseItem
 
     @Environment(EnvType.CLIENT)
     @Override
-    public void appendTooltip(ItemStack stack, World world, List<Component> list, TooltipContext context)
+    public void appendTooltip(ItemStack stack, World world, List<Text> list, TooltipContext context)
     {
-        list.add(new TranslatableComponent("item.inca.salt_bottle.lore"));
+        list.add(new TranslatableText("item.inca.salt_bottle.lore"));
     }
 }

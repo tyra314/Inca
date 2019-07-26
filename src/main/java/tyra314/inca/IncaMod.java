@@ -1,12 +1,13 @@
 package tyra314.inca;
 
-import io.github.cottonmc.cotton.logging.ModLogger;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import tyra314.inca.item.ModItems;
 import tyra314.inca.network.SpitPacket;
 
@@ -16,7 +17,7 @@ public class IncaMod implements ModInitializer
     public static final String MOD_ID = "inca";
     public static final String MOD_NAME = "Inca";
 
-    public static final ModLogger LOG = new ModLogger(IncaMod.MOD_ID, IncaMod.MOD_NAME);
+    public static final Logger LOG = LogManager.getLogger(MOD_ID);
 
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(

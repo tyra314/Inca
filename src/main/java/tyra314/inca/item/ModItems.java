@@ -1,7 +1,5 @@
 package tyra314.inca.item;
 
-import io.github.cottonmc.cotton.datapack.tags.TagEntryManager;
-import io.github.cottonmc.cotton.datapack.tags.TagType;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
@@ -24,7 +22,7 @@ public class ModItems
         register(LLAMA_SPIT_BOTTLE);
         register(SALT_BOTTLE);
 
-        TagEntryManager.registerToTag(TagType.ITEM, SALT.getId(), Registry.ITEM.getId(SALT_BOTTLE).toString());
+//        TagEntryManager.registerToTag(TagType.ITEM, SALT.getId(), Registry.ITEM.getId(SALT_BOTTLE).toString());
     }
 
     private static void register(BaseItem item)

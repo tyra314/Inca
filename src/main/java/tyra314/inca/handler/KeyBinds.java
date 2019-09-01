@@ -1,13 +1,15 @@
 package tyra314.inca.handler;
 
-import com.raphydaphy.crochet.network.PacketHandler;
+import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.keybinding.FabricKeyBinding;
 import net.fabricmc.fabric.api.client.keybinding.KeyBindingRegistry;
 import net.fabricmc.fabric.api.event.client.ClientTickCallback;
+import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 import org.lwjgl.glfw.GLFW;
 import tyra314.inca.IncaMod;
 import tyra314.inca.network.SpitPacket;
@@ -48,6 +50,10 @@ public class KeyBinds
     @Environment(EnvType.CLIENT)
     private static void handleSpitKey()
     {
-        PacketHandler.sendToServer(new SpitPacket());
+        SpitPacket p = new SpitPacket();
+
+        ClientSidePacketRegistry.INSTANCE.sendToServer(
+            p.getID(), new PacketByteBuf(Unpooled.buffer())
+        );
     }
 }

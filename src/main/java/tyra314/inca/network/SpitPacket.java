@@ -1,7 +1,6 @@
 package tyra314.inca.network;
 
-import com.raphydaphy.crochet.network.IPacket;
-import com.raphydaphy.crochet.network.MessageHandler;
+import net.fabricmc.fabric.api.network.PacketConsumer;
 import net.fabricmc.fabric.api.network.PacketContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.LlamaEntity;
@@ -15,7 +14,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import tyra314.inca.IncaMod;
 
-public class SpitPacket implements IPacket
+public class SpitPacket
 {
     public static final Identifier ID = new Identifier(IncaMod.MOD_ID, "spit");
 
@@ -23,32 +22,22 @@ public class SpitPacket implements IPacket
     {
     }
 
-    @Override
     public void read(PacketByteBuf packetByteBuf)
     {
     }
 
-    @Override
     public void write(PacketByteBuf packetByteBuf)
     {
     }
 
-    @Override
     public Identifier getID()
     {
         return ID;
     }
 
 
-    public static class Handler extends MessageHandler<SpitPacket>
+    public static class Handler implements PacketConsumer
     {
-        @Override
-        protected SpitPacket create()
-        {
-            return new SpitPacket();
-        }
-
-        @Override
         public void handle(PacketContext ctx, SpitPacket message)
         {
             PlayerEntity player = ctx.getPlayer();
@@ -86,6 +75,14 @@ public class SpitPacket implements IPacket
                         }
                     }
             );
+        }
+
+        @Override
+        public void accept(PacketContext context, PacketByteBuf buffer)
+        {
+            SpitPacket p = new SpitPacket();
+            p.read(buffer);
+            handle(context, p);
         }
     }
 }

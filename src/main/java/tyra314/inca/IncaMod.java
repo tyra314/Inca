@@ -2,14 +2,13 @@ package tyra314.inca;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tyra314.inca.item.ModItems;
-import tyra314.inca.network.SpitPacket;
+import tyra314.inca.network.PacketDispatcher;
 
 public class IncaMod implements ModInitializer
 {
@@ -35,6 +34,6 @@ public class IncaMod implements ModInitializer
 
         ModItems.init();
 
-        ServerSidePacketRegistry.INSTANCE.register(SpitPacket.ID, new SpitPacket.Handler());
+        PacketDispatcher.registerPackets();
     }
 }

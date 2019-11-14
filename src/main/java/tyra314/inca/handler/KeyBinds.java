@@ -1,18 +1,16 @@
 package tyra314.inca.handler;
 
-import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.keybinding.FabricKeyBinding;
 import net.fabricmc.fabric.api.client.keybinding.KeyBindingRegistry;
 import net.fabricmc.fabric.api.event.client.ClientTickCallback;
-import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.PacketByteBuf;
 import org.lwjgl.glfw.GLFW;
 import tyra314.inca.IncaMod;
-import tyra314.inca.network.SpitPacket;
+import tyra314.inca.network.PacketDispatcher;
+import tyra314.inca.network.server.LlamaSpitAttackPacket;
 
 @Environment(EnvType.CLIENT)
 public class KeyBinds
@@ -21,8 +19,7 @@ public class KeyBinds
 
 
     @Environment(EnvType.CLIENT)
-    public static void init()
-    {
+    public static void init() {
         IncaMod.LOG.info("Setting up key bindings...");
 
         spitKeyBinding = FabricKeyBinding.Builder.create(
@@ -37,8 +34,7 @@ public class KeyBinds
 
         ClientTickCallback.EVENT.register(e ->
         {
-            if (spitKeyBinding.isPressed())
-            {
+            if (spitKeyBinding.isPressed()) {
                 handleSpitKey();
             }
         });
@@ -48,12 +44,7 @@ public class KeyBinds
      * If this key binding is pressed, we check if the player rides a llama and if he does, we let it spit in the direction the player is looking
      */
     @Environment(EnvType.CLIENT)
-    private static void handleSpitKey()
-    {
-        SpitPacket p = new SpitPacket();
-
-        ClientSidePacketRegistry.INSTANCE.sendToServer(
-            p.getID(), new PacketByteBuf(Unpooled.buffer())
-        );
+    private static void handleSpitKey() {
+        PacketDispatcher.sendToServer(new LlamaSpitAttackPacket());
     }
 }

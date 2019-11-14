@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import tyra314.inca.network.ISpitter;
+import tyra314.inca.network.server.ISpitter;
 
 @Mixin(LlamaEntity.class)
 public class LlamaMixin extends AbstractDonkeyEntity implements ISpitter

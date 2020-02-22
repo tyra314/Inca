@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "inca:block/nautilus_ore" }
+  }
+}

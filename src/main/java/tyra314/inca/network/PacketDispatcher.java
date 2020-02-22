@@ -12,7 +12,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import tyra314.inca.IncaMod;
-import tyra314.inca.network.client.SeasonChangePacket;
 import tyra314.inca.network.server.LlamaSpitAttackPacket;
 
 import java.util.HashSet;
@@ -28,7 +27,6 @@ public class PacketDispatcher {
 
     public static void registerPackets() {
         registerPacket(LlamaSpitAttackPacket.ID, LlamaSpitAttackPacket.class);
-        registerPacket(SeasonChangePacket.ID, SeasonChangePacket.class);
 
 
         setupPacketConsumer(SERVER_PACKETS, ServerSidePacketRegistry.INSTANCE);

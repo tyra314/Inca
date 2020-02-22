@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import tyra314.inca.block.ModBlocks;
 import tyra314.inca.item.ModItems;
 import tyra314.inca.network.PacketDispatcher;
 
@@ -32,6 +33,7 @@ public class IncaMod implements ModInitializer
 
         LOG.info("Initializing Inca Mod...");
 
+        ModBlocks.init();
         ModItems.init();
 
         PacketDispatcher.registerPackets();

@@ -12,6 +12,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import tyra314.inca.IncaMod;
+import tyra314.inca.mixin.interfaces.ISpitter;
 import tyra314.inca.network.AbstractPacket;
 
 public class LlamaSpitAttackPacket extends AbstractPacket.AbstractServerPacket<LlamaSpitAttackPacket> {
@@ -48,9 +49,9 @@ public class LlamaSpitAttackPacket extends AbstractPacket.AbstractServerPacket<L
             float strength = MathHelper.sqrt(rot.x * rot.x + rot.z * rot.z) * 0.2F;
             spit.setVelocity(rot.x, rot.y + (double) strength, rot.z, 1.5F, 10.0F);
             world.playSound(null,
-                    llama.x,
-                    llama.y,
-                    llama.z,
+                    llama.getX(),
+                    llama.getY(),
+                    llama.getZ(),
                     SoundEvents.ENTITY_LLAMA_SPIT,
                     llama.getSoundCategory(),
                     1.0F,

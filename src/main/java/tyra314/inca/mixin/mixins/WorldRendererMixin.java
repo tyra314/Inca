@@ -1,4 +1,4 @@
-package tyra314.inca.mixin;
+package tyra314.inca.mixin.mixins;
 
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;

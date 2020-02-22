@@ -1,4 +1,4 @@
-package tyra314.inca.network.server;
+package tyra314.inca.mixin.interfaces;
 
 public interface ISpitter
 {

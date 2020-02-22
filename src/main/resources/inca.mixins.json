@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "tyra314.inca.mixin",
+  "package": "tyra314.inca.mixin.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "PlayerMixin",
@@ -8,7 +8,6 @@
     "LlamaSpitMixin"
   ],
   "client": [
-    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

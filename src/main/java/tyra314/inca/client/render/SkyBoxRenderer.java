@@ -1,14 +1,9 @@
 package tyra314.inca.client.render;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.BufferBuilder;
-import net.minecraft.client.render.GuiLighting;
-import net.minecraft.client.render.Tessellator;
-import net.minecraft.client.render.VertexFormats;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.lwjgl.opengl.GL11;
 
 import java.util.Random;
 
@@ -16,57 +11,57 @@ public class SkyBoxRenderer
 {
     public static void draw(World world, float partialTicks)
     {
-        if (!world.dimension.hasVisibleSky())
-        {
-            return;
-        }
-
-        GlStateManager.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA,
-                GlStateManager.DestFactor.ONE,
-                GlStateManager.SourceFactor.ONE,
-                GlStateManager.DestFactor.ZERO);
-
-        GlStateManager.enableBlend();
-        GlStateManager.disableAlphaTest();
-        GlStateManager.disableFog();
-        GlStateManager.depthMask(false);
-        GuiLighting.disable();
-
-        GlStateManager.pushMatrix();
-        GlStateManager.rotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotatef(world.getSkyAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-
-        GlStateManager.rotatef(65.0F, 0.0F, 0.0F, 1.0F);
-        GlStateManager.rotatef(-75.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotatef(37.0F, 0.0F, 0.0F, 1.0F);
-
-        float brightness = 1.0F - world.getRainGradient(partialTicks);
-        float star_brightness = world.getStarsBrightness(partialTicks) * brightness;
-
-        if (star_brightness > 0.1F)
-        {
-            GlStateManager.color4f(star_brightness, star_brightness, star_brightness, star_brightness);
-            GlStateManager.disableTexture();
-            Tessellator tessellator = Tessellator.getInstance();
-            BufferBuilder buffer = tessellator.getBufferBuilder();
-
-            buffer.begin(GL11.GL_QUADS, VertexFormats.POSITION);
-
-            drawLlamaConstelation(buffer);
-
-            tessellator.draw();
-        }
-
-        GlStateManager.enableTexture();
-
-        GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-
-        GuiLighting.enable();
-        GlStateManager.depthMask(true);
-        GlStateManager.enableFog();
-        GlStateManager.enableAlphaTest();
-        GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+//        if (!world.dimension.hasVisibleSky())
+//        {
+//            return;
+//        }
+//
+//        GlStateManager.blendFuncSeparate(GlStateManager.SrcFactor.SRC_ALPHA,
+//                GlStateManager.DstFactor.ONE,
+//                GlStateManager.SrcFactor.ONE,
+//                GlStateManager.DstFactor.ZERO);
+//
+//        GlStateManager.enableBlend();
+//        GlStateManager.disableAlphaTest();
+//        GlStateManager.disableFog();
+//        GlStateManager.depthMask(false);
+//        GuiLighting.disable();
+//
+//        GlStateManager.pushMatrix();
+//        GlStateManager.rotatef(-90.0F, 0.0F, 1.0F, 0.0F);
+//        GlStateManager.rotatef(world.getSkyAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+//
+//        GlStateManager.rotatef(65.0F, 0.0F, 0.0F, 1.0F);
+//        GlStateManager.rotatef(-75.0F, 0.0F, 1.0F, 0.0F);
+//        GlStateManager.rotatef(37.0F, 0.0F, 0.0F, 1.0F);
+//
+//        float brightness = 1.0F - world.getRainGradient(partialTicks);
+//        float star_brightness = world.getStarsBrightness(partialTicks) * brightness;
+//
+//        if (star_brightness > 0.1F)
+//        {
+//            GlStateManager.color4f(star_brightness, star_brightness, star_brightness, star_brightness);
+//            GlStateManager.disableTexture();
+//            Tessellator tessellator = Tessellator.getInstance();
+//            BufferBuilder buffer = tessellator.getBufferBuilder();
+//
+//            buffer.begin(GL11.GL_QUADS, VertexFormats.POSITION);
+//
+//            drawLlamaConstelation(buffer);
+//
+//            tessellator.draw();
+//        }
+//
+//        GlStateManager.enableTexture();
+//
+//        GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+//
+//        GuiLighting.enable();
+//        GlStateManager.depthMask(true);
+//        GlStateManager.enableFog();
+//        GlStateManager.enableAlphaTest();
+//        GlStateManager.disableBlend();
+//        GlStateManager.popMatrix();
     }
 
     private static void drawLlamaConstelation(BufferBuilder buffer)
@@ -123,8 +118,7 @@ public class SkyBoxRenderer
         {
             radius = 0.4f;
 
-            if (MinecraftClient.getInstance().player.isInWater())
-            {
+            if (MinecraftClient.getInstance().player.isTouchingWater()) {
                 radius += 0.2f;
             }
         }

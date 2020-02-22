@@ -1,4 +1,4 @@
-package tyra314.inca.mixin;
+package tyra314.inca.mixin.mixins;
 
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.ProjectileDamageSource;

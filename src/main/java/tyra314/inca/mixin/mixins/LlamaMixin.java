@@ -1,4 +1,4 @@
-package tyra314.inca.mixin;
+package tyra314.inca.mixin.mixins;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import tyra314.inca.network.server.ISpitter;
+import tyra314.inca.mixin.interfaces.ISpitter;
 
 @Mixin(LlamaEntity.class)
 public class LlamaMixin extends AbstractDonkeyEntity implements ISpitter

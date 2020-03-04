@@ -10,14 +10,16 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import tyra314.inca.IncaMod;
 
-public class ModBlocks
-{
+public class ModBlocks {
     public static final Block NAUTILUS_ORE = new Block(FabricBlockSettings
             .of(Material.STONE)
-            .breakByTool(FabricToolTags.PICKAXES, 2).build());
+            .hardness(10f)
+            .breakByHand(false)
+            .resistance(5f)
+            .breakByTool(FabricToolTags.PICKAXES, 3)
+            .build());
 
-    public static void init()
-    {
+    public static void init() {
         Registry.register(Registry.BLOCK, new Identifier(IncaMod.MOD_ID, "nautilus_ore"), NAUTILUS_ORE);
         Registry.register(Registry.ITEM,
                 new Identifier(IncaMod.MOD_ID, "nautilus_ore"),

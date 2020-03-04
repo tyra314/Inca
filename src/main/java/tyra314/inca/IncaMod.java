@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import tyra314.inca.block.ModBlocks;
 import tyra314.inca.item.ModItems;
 import tyra314.inca.network.PacketDispatcher;
+import tyra314.inca.world.OreGen;
 
 public class IncaMod implements ModInitializer
 {
@@ -35,6 +36,8 @@ public class IncaMod implements ModInitializer
 
         ModBlocks.init();
         ModItems.init();
+
+        OreGen.init();
 
         PacketDispatcher.registerPackets();
     }

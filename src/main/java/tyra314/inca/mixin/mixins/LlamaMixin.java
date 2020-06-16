@@ -23,7 +23,7 @@ public class LlamaMixin extends AbstractDonkeyEntity implements ISpitter
     }
 
     @Inject(at = @At("HEAD"), method = "canBeControlledByRider", cancellable = true)
-    private void canBeControlledByRider(CallbackInfoReturnable<Boolean> info)
+    private void inca_canBeControlledByRider(CallbackInfoReturnable<Boolean> info)
     {
         //noinspection ConstantConditions
         LlamaEntity llama = (LlamaEntity) ((Object) this);
@@ -32,7 +32,7 @@ public class LlamaMixin extends AbstractDonkeyEntity implements ISpitter
     }
 
     @Inject(at = @At("HEAD"), method = "canBeSaddled", cancellable = true)
-    private void canBeSaddled(CallbackInfoReturnable<Boolean> info)
+    private void inca_canBeSaddled(CallbackInfoReturnable<Boolean> info)
     {
         info.setReturnValue(true);
     }

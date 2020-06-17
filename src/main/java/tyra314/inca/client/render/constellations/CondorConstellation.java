@@ -16,7 +16,6 @@ class CondorConstellation
     void draw(BufferBuilder buffer, MatrixStack matrixStack)
     {
         matrixStack.push();
-        RenderSystem.color4f(1.0F, .0F, .0F, 1.0f);
 
         matrixStack.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(140f));
         matrixStack.multiply(Vector3f.POSITIVE_Z.getDegreesQuaternion(-65F));
@@ -25,43 +24,37 @@ class CondorConstellation
 
         Matrix4f matrix4f2 = matrixStack.peek().getModel();
 
-        drawStar(4, 10, buffer, matrix4f2);
+        drawStar(0, 22, buffer, matrix4f2);
+        drawStar(0, 24, buffer, matrix4f2);
+        drawStar(1, 1, buffer, matrix4f2);
+        drawStar(1, 4, buffer, matrix4f2);
 
-        drawStar(6, 14, buffer, matrix4f2);
-        drawStar(5, 12, buffer, matrix4f2);
-        drawStar(7, 4, buffer, matrix4f2);
-        drawStar(7, 6, buffer, matrix4f2);
-        drawStar(7, 10, buffer, matrix4f2);
-        drawStar(8, 1, buffer, matrix4f2);
+        drawStar(4, 0, buffer, matrix4f2);
+        drawStar(5, 4, buffer, matrix4f2);
+        drawStar(6, 21, buffer, matrix4f2);
+        drawStar(7, 8, buffer, matrix4f2);
 
-        drawStar(9, 8, buffer, matrix4f2);
-        drawStar(12, 15, buffer, matrix4f2);
+        drawStar(8, 18, buffer, matrix4f2);
+        drawStar(9, 12, buffer, matrix4f2);
+        drawStar(11, 9, buffer, matrix4f2);
 
-        drawStar(14, 9, buffer, matrix4f2);
+        drawStar(12, 12, buffer, matrix4f2);
+        drawStar(13, 16, buffer, matrix4f2);
+        drawStar(15, 19, buffer, matrix4f2);
 
-        drawStar(17, 16, buffer, matrix4f2);
-        drawStar(20, 10, buffer, matrix4f2);
+        drawStar(17, 13, buffer, matrix4f2);
+        drawStar(17, 21, buffer, matrix4f2);
 
-        drawStar(21, 7, buffer, matrix4f2);
-        drawStar(21, 19, buffer, matrix4f2);
-        drawStar(21, 24, buffer, matrix4f2);
-        drawStar(22, 3, buffer, matrix4f2);
-        drawStar(22, 27, buffer, matrix4f2);
-        drawStar(23, 3, buffer, matrix4f2);
+        drawStar(20, 21, buffer, matrix4f2);
+        drawStar(21, 17, buffer, matrix4f2);
+        drawStar(22, 16, buffer, matrix4f2);
+        drawStar(21, 16, buffer, matrix4f2);
+        drawStar(22, 9, buffer, matrix4f2);
         drawStar(23, 6, buffer, matrix4f2);
-        drawStar(23, 30, buffer, matrix4f2);
-        drawStar(24, 9, buffer, matrix4f2);
-        drawStar(24, 21, buffer, matrix4f2);
-        drawStar(24, 28, buffer, matrix4f2);
-        drawStar(24, 31, buffer, matrix4f2);
 
-        drawStar(25, 18, buffer, matrix4f2);
-        drawStar(25, 25, buffer, matrix4f2);
-        drawStar(26, 13, buffer, matrix4f2);
-        drawStar(26, 16, buffer, matrix4f2);
-        drawStar(26, 28, buffer, matrix4f2);
-        drawStar(28, 26, buffer, matrix4f2);
-        drawStar(28, 27, buffer, matrix4f2);
+        drawStar(26, 1, buffer, matrix4f2);
+        drawStar(27, 4, buffer, matrix4f2);
+
 
         matrixStack.pop();
     }

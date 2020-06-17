@@ -13,6 +13,7 @@ import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.client.world.ClientWorld;
 import org.lwjgl.opengl.GL11;
 import tyra314.inca.client.render.constellations.BaseConstellation;
+import tyra314.inca.client.render.constellations.CondorConstellation;
 import tyra314.inca.client.render.constellations.LlamaConstellation;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ class SkyBoxRenderer
     {
         this.textureManager = textureManager;
         constellations.add(new LlamaConstellation());
+        constellations.add(new CondorConstellation());
     }
 
     public

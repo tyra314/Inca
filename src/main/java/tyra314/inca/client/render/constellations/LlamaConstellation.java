@@ -6,7 +6,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
 
 public
-class LlamaConstallation
+class LlamaConstellation
         extends BaseConstellation
 {
 

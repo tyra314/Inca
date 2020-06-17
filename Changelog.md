@@ -1,3 +1,8 @@
+### v1.1.1:
+
+- Fix crash with OpenJDK
+- Adds condor constellation
+
 ### v1.1.0:
 
 - Update to 1.15.2

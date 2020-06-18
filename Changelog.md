@@ -1,3 +1,7 @@
+### v1.2.0:
+
+- Update to 1.16-rc1
+
 ### v1.1.1:
 
 - Fix crash with OpenJDK

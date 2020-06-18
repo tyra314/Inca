@@ -1,8 +1,10 @@
 package tyra314.inca.mixin.mixins;
 
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -45,7 +47,11 @@ public class LlamaSpitMixin {
         //noinspection ConstantConditions
         LlamaSpitEntity spit = (LlamaSpitEntity) ((Object) this);
 
-        if (spit.world.doesAreaContainFireSource(spit.getBoundingBox()))
+        boolean hasHitFire = spit.world.method_29546(spit.getBoundingBox()).anyMatch(state -> {
+           return state.getMaterial() == Material.FIRE;
+        });
+
+        if (hasHitFire)
         {
             putOutFire(spit.getBoundingBox(), spit.world);
         }

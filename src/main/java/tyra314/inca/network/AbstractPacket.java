@@ -3,7 +3,7 @@ package tyra314.inca.network;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.PacketByteBuf;
+import net.minecraft.network.PacketByteBuf;
 import tyra314.inca.IncaMod;
 
 import java.io.IOException;

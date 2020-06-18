@@ -3,10 +3,7 @@ package tyra314.inca.client.render;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gl.VertexBuffer;
-import net.minecraft.client.render.BufferBuilder;
-import net.minecraft.client.render.BufferRenderer;
-import net.minecraft.client.render.Tessellator;
-import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.render.*;
 import net.minecraft.client.texture.TextureManager;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
@@ -39,7 +36,7 @@ class SkyBoxRenderer
     public
     void draw(ClientWorld world, MatrixStack matrixStack, float partialTicks)
     {
-        if (!world.dimension.hasVisibleSky())
+        if (world.getSkyProperties().method_29992() != SkyProperties.class_5401.NORMAL)
         {
             return;
         }

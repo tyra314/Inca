@@ -36,7 +36,7 @@ class SkyBoxRenderer
     public
     void draw(ClientWorld world, MatrixStack matrixStack, float partialTicks)
     {
-        if (world.getSkyProperties().method_29992() != SkyProperties.class_5401.NORMAL)
+        if (world.getSkyProperties().getSkyType() != SkyProperties.SkyType.NORMAL)
         {
             return;
         }

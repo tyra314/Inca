@@ -23,12 +23,12 @@ class WorldRendererMixin
     @Shadow
     private TextureManager textureManager;
 
-    private SkyBoxRenderer renderer = new SkyBoxRenderer(textureManager);
+    private SkyBoxRenderer Inca_renderer = new SkyBoxRenderer(textureManager);
 
     @Inject(at = @At("TAIL"), method = "renderSky")
     private
-    void renderSky(MatrixStack matrixStack, float partialTicks, CallbackInfo info)
+    void Inca_renderSky(MatrixStack matrixStack, float partialTicks, CallbackInfo info)
     {
-        renderer.draw(world, matrixStack, partialTicks);
+        Inca_renderer.draw(world, matrixStack, partialTicks);
     }
 }

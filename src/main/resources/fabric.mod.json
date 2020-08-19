@@ -17,6 +17,7 @@
   "license": "GPLv3",
   "icon": "assets/inca/icon.png",
 
+  "accessWidener": "inca.accesswidener",
   "environment": "*",
   "entrypoints": {
     "main": [

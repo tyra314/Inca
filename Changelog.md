@@ -1,3 +1,7 @@
+### v1.2.3:
+
+- Update to 1.16.2
+
 ### v1.2.2:
 
 - Fix crash when sodium is used

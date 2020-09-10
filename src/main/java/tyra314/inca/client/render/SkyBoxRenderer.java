@@ -63,7 +63,7 @@ class SkyBoxRenderer
 
             matrixStack.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-90.0F));
             matrixStack.multiply(Vector3f.POSITIVE_X
-                    .getDegreesQuaternion(world.getSkyAngleRadians(partialTicks) * 360.0F));
+                    .getDegreesQuaternion(world.getSkyAngleRadians(partialTicks) * 90.0F));
 
             constellations.stream().forEach(
                     constellation -> constellation.draw(buffer, matrixStack));

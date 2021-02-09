@@ -1,10 +1,11 @@
 {
     "itemGroup.inca.general": "Inca",
-  "block.inca.nautilus_ore": "Ancient fossil",
+    "block.inca.nautilus_ore": "Ancient fossil",
 
     "item.inca.llama_spit_bottle": "Bottle of Llama Spit",
     "item.inca.salt_bottle": "Bottle of Salt",
     "item.inca.salt_bottle.lore":  "Still smells like llama",
 
-    "key.inca.spit": "Llama spit"
+    "key.inca.spit": "Llama spit",
+    "category.inca.main": "Inca"
 }

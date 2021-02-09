@@ -16,7 +16,6 @@ public class IncaMod implements ModInitializer
 {
     public static final String SHARED_NAMESPACE = "c";
     public static final String MOD_ID = "inca";
-    public static final String MOD_NAME = "Inca";
 
     public static final Logger LOG = LogManager.getLogger(MOD_ID);
 
